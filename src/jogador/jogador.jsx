@@ -31,9 +31,11 @@ export default class Jogador extends Component{
 
     render(){
         return (
-            <div>
-                <JogadorForm nomeJogador={this.state.nomeJogador} handleChange={this.handleChange} handleSearch={this.handleSearch} />
-                <JogadorList list={this.state.list} />
+            <div className='row'>
+                <div className='col-md-12'>
+                    <JogadorForm nomeJogador={this.state.nomeJogador} handleChange={this.handleChange} handleSearch={this.handleSearch} />
+                    <JogadorList list={this.state.list} />  
+                </div>
             </div>
         )
     }
