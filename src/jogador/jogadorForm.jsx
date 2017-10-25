@@ -2,12 +2,7 @@ import React from 'react';
 
 export default props => (
     <div>
-        <div role='form' className='jogadorForm'>
-
-            {/* <Grid cols='12 9 10'>
-                <input id='description' className='form-control' placeholder='Adicione uma tarefa' value={props.description}
-                onChange={props.handleChange}/>
-            </Grid> */}
+        <div role='form' className='jogadorForm'>           
 
             <div className='col-xs-12 col-sm-3 col-md-2'>
                 <input type='text' className='form-control' placeholder='Nacionalidade'/>   
