@@ -8,19 +8,31 @@ export default props => {
         
         const list = props.list || [];
         return list.map(jogador => (
-            <div className='col-md-2'>
-                <div className='panel panel-default marginTop'>
-                    <div className='panel-heading'>
-                        <img src={jogador.headshotImgUrl} alt='...' className='img-circle'/>    
-                    </div>
-                    <div className='panel-body'>
-                    <p><strong>{jogador.firstName}</strong></p>
-                    <div className='col-md-6'>   
-                            <Button tipo='primary'icone='fa fa-plus'/>                                       
-                    </div>
-                    <div className='col-md-6'>
-                        <a href='#/jogadorDetalhes' className='btn btn-success'><i className='fa fa-info-circle'></i></a>
-                    </div>
+            <div className='col-md-3'>
+                <div className='card flip-container'>
+                    <div className='flipper'>
+                        <div className="front">
+                            <img src={jogador.headshotImgUrl} alt='' className='img-circle'/>
+                            <p className='title'>{jogador.firstName}</p>
+                            <p>{jogador.lastName}</p>
+                            <p><strong>Equipe: </strong>{jogador.club.name}</p>  
+                            <p><strong>Liga: </strong>{jogador.league.name}</p>   
+                            <p><strong>Nacionalidade: </strong>{jogador.nation.name}</p>                                  
+                            <p><button>Detalhes</button></p>
+                        </div>
+                        <div className="back">
+                            <p><strong>Posição: </strong>{jogador.position}</p>
+                            <p><strong>Agilidade: </strong>{jogador.agility}</p>
+                            <p><strong>Força do chute: </strong>{jogador.shotpower}</p>
+                            <p><strong>Drible: </strong>{jogador.dribbling}</p>
+                            <p><strong>Aceleração: </strong>{jogador.acceleration}</p>
+                            <p><strong>Altura: </strong>{jogador.height}</p>
+                            <p><strong>Reação: </strong>{jogador.reactions}</p>
+                            <p><strong>Folego: </strong>{jogador.stamina}</p>
+                            <p><strong>Visão: </strong>{jogador.vision}</p>
+                            <p><strong>Impulsão: </strong>{jogador.jumping}</p>
+                            <p><button onClick={props.handleAdd}>Adicionar ao elenco</button></p>
+                        </div>
                     </div>
                 </div>
             </div>

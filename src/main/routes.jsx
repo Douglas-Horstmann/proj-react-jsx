@@ -7,7 +7,7 @@ import JogadorDetalhes from '../jogadorDetalhes/jogadorDetalhes';
 export default props => (
     <Router history={hashHistory}>
         <Route path='/jogador' component={Jogador}/>
-        <Route path='/jogadorDetalhes' component={JogadorDetalhes}/>
+        <Route path='/details' component={JogadorDetalhes}/>
         <Route from='*' to='/outros' />
     </Router>
 )
