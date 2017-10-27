@@ -8,10 +8,10 @@ module.exports = {
         filename: './app.js'
     },
     devServer: {
-        port: 8080,
+        port: 9000,
         contentBase: './public',
         headers: {
-            'Access-Control-Allow-Origin': 'http://localhost:8080',
+            'Access-Control-Allow-Origin': 'http://localhost:9000',
             'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
             'Access-Control-Allow-Headers': 'Origin, X-Requested-With, content-type, Accept'
           }

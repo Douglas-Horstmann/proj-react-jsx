@@ -12,8 +12,8 @@ export default props => (
                 <div className='col-xs-12 col-sm-6 col-md-2'>
                     <button className='btn btn-primary' onClick={props.handleSearch}>
                         <i className='fa fa-search'></i>
-                    </button>    
-                </div>
+                    </button>   
+                </div>                
             </div>
         </div>
     </div>    

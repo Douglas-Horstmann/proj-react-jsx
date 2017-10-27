@@ -2,12 +2,12 @@ import React from 'react';
 import { Router, Route, Redirect, hashHistory } from 'react-router';
 
 import Jogador from '../jogador/jogador';
-import JogadorDetalhes from '../jogadorDetalhes/jogadorDetalhes';
+import Elenco from '../elenco/elenco';
 
 export default props => (
     <Router history={hashHistory}>
         <Route path='/jogador' component={Jogador}/>
-        <Route path='/details' component={JogadorDetalhes}/>
+        <Route path='/elenco' component={Elenco}/>
         <Route from='*' to='/outros' />
     </Router>
 )

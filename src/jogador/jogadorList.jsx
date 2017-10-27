@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Button from '../template/button';
+import Card from '../template/card';
 
 export default props => {
 
@@ -8,6 +9,7 @@ export default props => {
         
         const list = props.list || [];
         return list.map(jogador => (
+            // <Card Jogador={jogador}/>
             <div className='col-md-3'>
                 <div className='card flip-container'>
                     <div className='flipper'>
@@ -31,7 +33,7 @@ export default props => {
                             <p><strong>Folego: </strong>{jogador.stamina}</p>
                             <p><strong>Visão: </strong>{jogador.vision}</p>
                             <p><strong>Impulsão: </strong>{jogador.jumping}</p>
-                            <p><button onClick={props.handleAdd}>Adicionar ao elenco</button></p>
+                            <p><button onClick={() => props.handleAdd(jogador)}>Adicionar ao elenco</button></p>
                         </div>
                     </div>
                 </div>

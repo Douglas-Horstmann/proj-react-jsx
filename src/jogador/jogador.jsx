@@ -10,7 +10,7 @@ const URL = 'http://www.easports.com/fifa/ultimate-team/api/fut/item?';
 export default class Jogador extends Component{
     constructor(props){
         super(props);
-        this.state = { nomeJogador: '', list: []}
+        this.state = { nomeJogador: '', listElenco: [], list: []}
 
         this.handleSearch = this.handleSearch.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -32,6 +32,7 @@ export default class Jogador extends Component{
     }
 
     handleAdd(jogador){
+        console.log(jogador);
         let player = {
             "firstName": jogador.firstName,
             "lastName": jogador.lastName,
@@ -48,7 +49,21 @@ export default class Jogador extends Component{
             "vision": jogador.vision,
             "jumping": jogador.jumping
         }
-        console.log(player);
+        
+        let listElencoAux = JSON.parse(localStorage.getItem('MeuElenco'));
+        if(listElencoAux === null){
+            console.log('List elenco is null');
+            listElencoAux = [];
+            listElencoAux.push(player);
+        }            
+        else
+            listElencoAux.push(player);
+                
+        localStorage.setItem('MeuElenco', JSON.stringify(listElencoAux));
+
+        this.setState({...this.state, listElenco: listElencoAux});
+
+        console.log('Dados salvos no storage');
     }
 
     render(){
@@ -56,7 +71,7 @@ export default class Jogador extends Component{
             <div className='row'>
                 <div className='col-md-12'>
                     <JogadorForm nomeJogador={this.state.nomeJogador} handleChange={this.handleChange} handleSearch={this.handleSearch} />
-                    <JogadorList handleAdd={this.handleAdd} />  
+                    <JogadorList handleAdd={this.handleAdd} list={this.state.list}/>  
                 </div>
             </div>
         )
